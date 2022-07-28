@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { lightBlue } = require(`../../../util/config.json`)
-const { errorEmbed, customEmbed } = require(`../../../util/embed`)
+const { lightBlue } = require(`../../util/config.json`)
+const { errorEmbed, customEmbed } = require(`../../util/embed`)
 
 //? Reusable embeds example.
 module.exports = {

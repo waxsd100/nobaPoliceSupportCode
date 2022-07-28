@@ -1,4 +1,4 @@
-const { cooldown, permissions } = require('../util/functions')
+const { coolDown, permissions } = require('../util/functions')
 
 module.exports = {
 	name: 'interactionCreate',
@@ -25,9 +25,9 @@ async function slashInteraction(interaction, client) {
 			return
 		}
 	}
-	//? Slash Command Cooldown.
-	if (slashCommand.cooldown) {
-		if (cooldown(interaction, slashCommand, interaction.user.id, client)) {
+	//? Slash Command coolDown.
+	if (slashCommand.coolDown) {
+		if (coolDown(interaction, slashCommand, interaction.user.id, client)) {
 			return
 		}
 	}

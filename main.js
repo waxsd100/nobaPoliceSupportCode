@@ -8,7 +8,7 @@ client.commands = new Collection()
 client.buttons = new Collection()
 client.selectMenus = new Collection()
 client.slashCommands = new Collection()
-client.cooldowns = new Collection();
+client.coolDowns = new Collection();
 ['commandHandler.js', 'interactionHandler.js', 'eventHandler.js'].forEach((handler) => {
 	require(`./handlers/${handler}`)(client)
 })

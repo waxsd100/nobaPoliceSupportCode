@@ -1,4 +1,4 @@
-const { cooldown, permissions } = require('../util/functions')
+const { coolDown, permissions } = require('../util/functions')
 const { prefix } = require(`../util/config.json`)
 
 module.exports = {
@@ -19,9 +19,9 @@ module.exports = {
 				return
 			}
 		}
-		//? Command Cooldown.
-		if (command.cooldown) {
-			if (cooldown(message, command, message.author.id, client)) {
+		//? Command coolDown.
+		if (command.coolDown) {
+			if (coolDown(message, command, message.author.id, client)) {
 				return
 			}
 		}

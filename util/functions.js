@@ -18,24 +18,24 @@ function getFiles(dir) {
 	}
 	return commandFiles
 }
-//? Command cooldown function.
-function cooldown(interaction, collection, userID, client) {
-	if (client.cooldowns.has(userID)) {
+//? Command coolDown function.
+function coolDown(interaction, collection, userID, client) {
+	if (client.coolDowns.has(userID)) {
 		let timeWord
-		let cooldownTime
-		if (collection.cooldown >= 60000) {
-			if (collection.cooldown == 60000) timeWord = 'minute'
+		let coolDownTime
+		if (collection.coolDown >= 60000) {
+			if (collection.coolDown == 60000) timeWord = 'minute'
 			else timeWord = 'minutes'
-			cooldownTime = collection.cooldown / 60000
+			coolDownTime = collection.coolDown / 60000
 		} else {
-			if (collection.cooldown == 1000) timeWord = 'second'
+			if (collection.coolDown == 1000) timeWord = 'second'
 			else timeWord = 'seconds'
-			cooldownTime = collection.cooldown / 1000
+			coolDownTime = collection.coolDown / 1000
 		}
 		interaction.reply({
 			embeds: [
 				customEmbed(
-					`You are on a \`${cooldownTime}\` ${timeWord} cooldown.`,
+					`You are on a \`${coolDownTime}\` ${timeWord} coolDown.`,
 					red,
 					redTick
 				),
@@ -44,10 +44,10 @@ function cooldown(interaction, collection, userID, client) {
 		})
 		return true
 	} else {
-		client.cooldowns.set(userID)
+		client.coolDowns.set(userID)
 		setTimeout(() => {
-			client.cooldowns.delete(userID)
-		}, collection.cooldown)
+			client.coolDowns.delete(userID)
+		}, collection.coolDown)
 	}
 }
 //? Command permissions function.
@@ -65,4 +65,4 @@ function permissions(interaction, collection) {
 		return true
 	}
 }
-module.exports = { getFiles, cooldown, permissions }
+module.exports = { getFiles, coolDown, permissions }

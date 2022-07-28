@@ -7,7 +7,7 @@ const { clientID, guildID } = require('../util/config.json');
 module.exports = (client) => {
 	const commandArray = []
 	//! Slash Command Files.
-	const slashCommandFiles = getFiles('./Interactions/slashCommands')
+	const slashCommandFiles = getFiles('./interactions/slashCommands')
 	for (const slashCommand of slashCommandFiles) {
 		const slashCommandFile = require(slashCommand)
 		client.slashCommands.set(slashCommandFile.data.name, slashCommandFile)
@@ -15,7 +15,7 @@ module.exports = (client) => {
 		console.log(`\x1b[38;2;243;114;44m[Slash] \x1b[32m${slashCommandFile.data.name}\x1b[0m has been loaded.`)
 	}
 	//! Context Menu Files.
-	const contextMenuFiles = getFiles('./Interactions/contextMenus')
+	const contextMenuFiles = getFiles('./interactions/contextMenus')
 	for (const contextMenu of contextMenuFiles) {
 		const contextMenuFile = require(contextMenu)
 		client.slashCommands.set(contextMenuFile.data.name, contextMenuFile)
@@ -23,14 +23,14 @@ module.exports = (client) => {
 		console.log(`\x1b[38;2;248;150;30m[ContextMenu] \x1b[32m${contextMenuFile.data.name}\x1b[0m has been loaded.`)
 	}
 	//! Button Files.
-	const buttonFiles = getFiles('./Interactions/buttons')
+	const buttonFiles = getFiles('./interactions/buttons')
 	for (const button of buttonFiles) {
 		let buttonFile = require(button)
 		client.buttons.set(buttonFile.name, buttonFile)
 		console.log(`\x1b[38;2;249;199;79m[Buttons] \x1b[32m${buttonFile.name}\x1b[0m has been loaded.`)
 	}
 	//! Select Menus Files.
-	const selectMenuFiles = getFiles('./Interactions/selectMenus')
+	const selectMenuFiles = getFiles('./interactions/selectMenus')
 	for (const selectMenu of selectMenuFiles) {
 		let selectMenuFile = require(selectMenu)
 		client.selectMenus.set(selectMenuFile.name, selectMenuFile)

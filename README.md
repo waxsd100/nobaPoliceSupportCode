@@ -14,13 +14,13 @@ This Discord.js Template was designed to make building a Discord bot as simple a
 
     - This is a handler for all of Discord.js v13 new interaction. Slash-commands, Context-menus, Select-menus, and Buttons.
     - Dynamic file loading, organize your various commands in different folders to keep everything organized.
-    - Permissions and Cooldown system.
+    - Permissions and coolDown system.
 
 2. Legacy Command Handler
 
     - This is a handler for the leagacy message prefix commands.
     - Dynamic file loading, organize your various commands in different folders to keep everything organized.
-    - Permissions and Cooldown system.
+    - Permissions and coolDown system.
 
 3. Reusable Embeds
 
@@ -193,16 +193,16 @@ module.exports = {
 </details>
 
 <details>
-  <summary>Permissions/Cooldown format</summary>
+  <summary>Permissions/coolDown format</summary>
   
 ```js
 const { SlashCommandBuilder } = require('@discordjs/builders')
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('perms-cooldown-example')
-        .setDescription('Permissions & Cooldown example'),
-    cooldown: 5000, // Time in milliseconds.
+        .setName('perms-coolDown-example')
+        .setDescription('Permissions & coolDown example'),
+    coolDown: 5000, // Time in milliseconds.
     permissions: ['ADMINISTRATOR'],
     async execute(interaction) {
         interaction.reply({

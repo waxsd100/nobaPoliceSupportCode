@@ -1,14 +1,14 @@
 const { MessageButton, MessageActionRow } = require('discord.js')
 const { SlashCommandBuilder } = require('@discordjs/builders')
-const { lightBlue } = require(`../../../util/config.json`)
-const { customEmbed } = require(`../../../util/embed`)
+const { lightBlue } = require(`../../util/config.json`)
+const { customEmbed } = require(`../../util/embed`)
 
 //? Using Buttons Example.
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('button-example')
 		.setDescription('An example command to show how to create buttons.'),
-	cooldown: 5000,
+	coolDown: 5000,
 	async execute(interaction) {
 		let primaryButton = new MessageButton()
 			.setLabel('Primary')
